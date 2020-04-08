@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-theme-near",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Tanner Welsh (@tannerwelsh)",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
+  },
+  "devDependencies": {
+    "gatsby": "^2.20.14",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
