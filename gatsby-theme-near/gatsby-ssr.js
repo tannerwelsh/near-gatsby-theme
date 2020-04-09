@@ -1,3 +1,3 @@
-import { wrapRootElement as sharedWrapRoot } from './gatsby-shared-apis'
+// import { wrapRootElement as sharedWrapRoot } from './gatsby-shared-apis'
 
-export const wrapRootElement = sharedWrapRoot
+// export const wrapRootElement = sharedWrapRoot
