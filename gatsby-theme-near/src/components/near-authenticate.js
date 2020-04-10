@@ -35,11 +35,13 @@ export default class NearAuthenticate extends React.Component {
     const { wallet } = this.context
 
     const signInButton = (
-      <Button onClick={this.signIn}>Sign in with NEAR</Button>
+      <Button onClick={this.signIn}>
+        Sign in with NEAR
+      </Button>
     );
 
     const signOutButton = <Button onClick={this.signOut}>Sign out</Button>;
 
-    return wallet.isSignedIn ? signOutButton : signInButton;
+    return wallet.isSignedIn() ? signOutButton : signInButton;
   }
 }
