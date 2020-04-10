@@ -67,6 +67,12 @@ export const theme = {
       lineHeight: "body",
     },
   },
+  icons: {
+    small: {
+      width: "20px",
+      height: "20px",
+    },
+  },
   styles: {
     h1: {
       color: "slate",
