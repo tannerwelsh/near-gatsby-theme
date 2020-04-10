@@ -1,4 +1,4 @@
-# The smallest possible Gatsby theme
+# The NEAR protocol Gatsby theme
 
 ## Quick Start
 
@@ -6,8 +6,8 @@
 mkdir my-site
 cd my-site
 yarn init
-# install gatsby-theme-minimal and it's dependencies
-yarn add gatsby react react-dom gatsby-theme-minimal
+# install gatsby-theme-near and its dependencies
+yarn add # TODO: add URL for theme's NPM package
 ```
 
 Then add the theme to your `gatsby-config.js`. We'll use the long form
@@ -17,11 +17,19 @@ here for education purposes.
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-minimal",
-      options: {},
+      resolve: "gatsby-theme-near",
+      options: {
+        nearConfig: {
+          // Example custom options to pass to gatsby-theme-near
+          networkId: "default",
+          nodeUrl: "https://rpc.nearprotocol.com",
+          walletUrl: "https://wallet.nearprotocol.com",
+          helperUrl: "https://near-contract-helper.onrender.com",
+        },
+      },
     },
   ],
-}
+};
 ```
 
 That's it, you can now run your gatsby site using

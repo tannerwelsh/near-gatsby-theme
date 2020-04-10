@@ -4,47 +4,60 @@
   </a>
 </p>
 <h1 align="center">
-  Starter for creating a Gatsby Theme workspace
+  Gatsby theme providing styles & utility components for building with NEAR protocol
 </h1>
 
+## Use this Theme
+
 ```shell
-gatsby new my-theme https://github.com/gatsbyjs/gatsby-starter-theme-workspace
+cd /path/to/your-gatsby-site
+yarn add # TODO: add URL for theme's NPM package
+```
+
+Then edit your Gatsby config file:
+
+```js
+module.exports = {
+  plugins: [
+    {
+      resolve: "gatsby-theme-near",
+      options: {
+        nearConfig: {
+          // Example custom options to pass to gatsby-theme-near
+          networkId: "default",
+          nodeUrl: "https://rpc.nearprotocol.com",
+          walletUrl: "https://wallet.nearprotocol.com",
+          helperUrl: "https://near-contract-helper.onrender.com",
+        },
+      },
+    },
+  ],
+};
+```
+
+[Gatsby docs for using a theme](https://www.gatsbyjs.org/docs/themes/using-a-gatsby-theme/).
+
+## Up and Running
+
+```shell
+gatsby new my-theme https://github.com/tannerwelsh/near-gatsby-theme
 cd my-theme
 yarn workspace example develop
 ```
 
 ## Layout
 
-```text
-.
-├── README.md
-├── gatsby-theme-minimal
-│   ├── README.md
-│   ├── gatsby-config.js
-│   ├── index.js
-│   └── package.json
-├── example
-│   ├── README.md
-│   ├── gatsby-config.js
-│   ├── package.json
-│   └── src
-├── package.json
-└── yarn.lock
+Repo is split into two yarn workspaces: one for the theme itself, one for an example Gatsby site using the theme.
 
-3 directories, 10 files
-```
+### `gatsby-theme-near`
 
-### `gatsby-theme-minimal`
+This directory is the theme package itself.
 
-This directory is the theme package itself. You should rename this at
-some point to be `gatsby-theme-{my-theme-name}`. Also change the
-`package.json` name field and the corresponding dependency in the
-example directory's `package.json`/`gatsby-config.js` to match the chosen name.
-
-- `gatsby-theme-minimal/`
-  - `gatsby-config.js`: An empty gatsby-config that you can use as a starting point for building functionality into your theme.
+- `gatsby-theme-near/`
   - `index.js`: Since themes also function as plugins, this is an empty file that
     gatsby needs to use this theme as a plugin.
+  - `src/`: Components, styles, and asset files provied by the theme
+  - `static/`: Static files copied directly into the `public/` folder at buildtime
   - `package.json`: The dependencies that your theme will pull in when people install it. `gatsby` should be a `peerDependency`.
 
 ### `example`
