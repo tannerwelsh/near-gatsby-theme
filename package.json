@@ -5,7 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace example build"
+    "dev:theme": "PORT=8001 yarn workspace gatsby-theme-near develop",
+    "dev:example": "PORT=8000 yarn workspace example develop",
+    "dev": "yarn run dev:example"
   },
   "workspaces": [
     "gatsby-theme-near",
