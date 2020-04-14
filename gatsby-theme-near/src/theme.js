@@ -4,8 +4,21 @@
  * https://nearprotocol.com/brand/
  */
 
+const NEAR_COLORS = {
+  black: "#25282a",
+  white: "#ffffff",
+  slate: "#4b4f54",
+  red: ["#ff585d", "#bf4343", "#ff8384"],
+  blue: "#6ad1e3",
+  yellow: "#f0ec74",
+  green: "#8fd6bd",
+  royal: "#0072ce",
+  earth: "#d1ccbd",
+  grey: "#f8f8f8",
+}
+
 export const theme = {
-  space: [0, 4, 8, 16, 32],
+  space: [0, 4, 8, 16, 32, 64],
   fonts: {
     headlines: "BwSeidoRound-Medium, sans-serif",
     body: "Benton-Sans, sans-serif",
@@ -18,53 +31,63 @@ export const theme = {
   },
   colors: {
     // NEAR palette
-    black: "#25282A",
-    slate: "#4B4F54",
-    red: ["#FF585D", "#BF4343", "#FF8384"],
-    blue: "#6AD1E3",
-    yellow: "#F0EC74",
-    green: "#8FD6BD",
-    royal: "#0072CE",
-    earth: "#D1CCBD",
+    ...NEAR_COLORS,
 
-    // Common colors
-    background: "#fff",
-    'background-grey': "#f8f8f8",
-    primary: "#4B4F54",
-    error: "#FF585D",
+    // Theme UI colors
+    text: NEAR_COLORS.black,
+    background: NEAR_COLORS.white,
+    primary: NEAR_COLORS.slate,
+    secondary: NEAR_COLORS.red[0],
+    accent: NEAR_COLORS.blue,
+    error: NEAR_COLORS.red[0],
+    highlight: NEAR_COLORS.yellow,
+    muted: NEAR_COLORS.earth,
+
+    modes: {
+      dark: {
+        text: NEAR_COLORS.white,
+        background: NEAR_COLORS.slate,
+        primary: NEAR_COLORS.muted,
+      },
+    },
   },
   sizes: {
     default: "90vw",
-    max: "540px",
+    max: "960px",
   },
+  borderWidths: [1, 2],
   text: {
     heading: {
-      backgroundColor: "background",
       color: "primary",
       fontWeight: "bold",
       fontFamily: "headlines",
-      margin: "0 auto",
       maxWidth: "max",
-      padding: 3,
-      width: "default",
+      margin: 0,
+      padding: 0,
+      marginTop: 2,
+      marginBottom: 3,
       a: {
         color: "inherit",
       },
     },
+    "section-head": {
+      variant: "text.heading",
+      marginTop: 4,
+      borderBottom: "1px solid",
+    },
+    "subsection-head": {
+      variant: "text.heading",
+      color: "secondary",
+      fontSize: 3,
+      marginBottom: 2,
+    },
     code: {
+      padding: 2,
+      color: "background",
+      backgroundColor: "text",
       fontFamily: "monospace",
-    }
-  },
-  layout: {
-    container: {
-      margin: "0 auto",
-      maxWidth: "max",
-      width: "default",
-      padding: 3,
-      color: "slate",
-      fontFamily: "body",
-      fontSize: 1,
-      lineHeight: "body",
+      whiteSpace: "nowrap",
+      overflow: "scroll",
     },
   },
   icons: {
@@ -73,13 +96,27 @@ export const theme = {
       height: "20px",
     },
   },
-  styles: {
-    h1: {
-      color: "slate",
-      fontSize: 5,
-      fontWeight: "bold",
-      lineHeight: "heading",
-      margin: "1rem 0 0",
+  buttons: {
+    primary: {
+      color: "background",
+      bg: "primary"
+    }
+  },
+  layout: {
+    container: {
+      margin: "0 auto",
+      maxWidth: "max",
+      width: "default",
+      padding: 3,
+      color: "primary",
+      fontFamily: "body",
+      fontSize: 1,
+      lineHeight: "body",
     },
   },
+  styles: {
+    a: {
+      color: "accent"
+    }
+  }
 }
