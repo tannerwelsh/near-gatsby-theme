@@ -7,6 +7,8 @@
   Gatsby theme providing styles & utility components for building with NEAR protocol
 </h1>
 
+![Screen Shot 2020-04-13 at 6 19 41 PM](https://user-images.githubusercontent.com/709100/79173037-aa6b5400-7db3-11ea-831d-5584ad0e3856.png)
+
 ## Use this Theme
 
 ```shell
